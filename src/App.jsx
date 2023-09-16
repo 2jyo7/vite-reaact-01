@@ -9,6 +9,7 @@ import Home from "./Home";
 import Services from "./Services";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { GlobalStyle } from "./GlobalStyle";
+//import GoToTop from "./Components/GoToTop";
 
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      
     <BrowserRouter>
     <Header />
     <Routes>

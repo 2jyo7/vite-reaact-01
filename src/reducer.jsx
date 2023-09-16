@@ -1,26 +1,15 @@
 const reducer = (state, action) => {
-switch (action.type) {
-    case "HOME_UPDATE":
-        return {
-            ...state,
-            name: action.payload.name,
-            image: action.payload.image,
-        };
-        case "ABOUT_UPDATE":
-        return {
-            ...state,
-            name: action.payload.name,
-            image: action.payload.image,
-        }
-         case "GET_SERVICES ":
-        return {
-            ...state,
-           services: action.payload,
-        };
-        }
 
+    switch (action.type) {
+        case "SERVICES_DATA":
+            return {
+                ...state,
+                services: action.payload,
+            }
+    
+    
+    }
 
     return state;
 };
-
 export default reducer;

@@ -1,33 +1,34 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles/Button";
-import { NavLink } from "react-router-dom";
-import { useGlobalContext } from "../Context";
+//import { useGlobalContext } from "../Context";
 
 const HeroSection = () => {
-  const {name , image } = useGlobalContext();
-    return (
-        <Wrapper>
-         <div className="container grid grid-two-column">
-          <div className="section-hero-data">
-            <p className="hero-top-data ">THIS IS ME</p>
-            <h1 className="hero-heading ">{name}</h1>
-            <p className="hero-para">
-            I am  VirginRiver . A Full stack Developer, youtuber and freelancer. A Full
-            stack Developer, youtuber and freelancer.
+
+  return (
+    <Wrapper>
+      <div className="container grid grid-two-column">
+        <div className="section-hero-data">
+          <p className="hero-top-data">THIS IS </p>
+          <h1 className="hero-heading">virgin-river</h1>
+          <p className="hero-para">
+            I am virgin river. A one-stop-solution to all your
+             hectic exploration of travelling queries.
           </p>
           <Button className="btn hireme-btn">
-              <NavLink to={"/contact"} >Hire me</NavLink>
+            <NavLink to="/contact"> hire me </NavLink>
           </Button>
-          </div>
+        </div>
 
-          <div className="section-hero-image">
-            <picture>
-                <img src={image} alt="hero-image" className="hero-img" />
-            </picture>
-          </div>
-         </div>
-        </Wrapper>
-    )
+        {/* for image  */}
+        <div className="section-hero-image">
+          <picture>
+            <img src={"https://www.1stopservices.co.in/img/Travel%20Services.jpg"} alt="hero image" className="hero-img " />
+          </picture>
+        </div>
+      </div>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.section`
@@ -68,7 +69,19 @@ const Wrapper = styled.section`
   }
 
   picture {
-    text-align: center;
+    text-alignment: center;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 60%;
+      height: 80%;
+      background-color: rgba(81, 56, 238, 0.4);
+      position: absolute;
+      left: 40%;
+      top: -4rem;
+      z-index: -1;
+    }
   }
 
   .hero-img {
